@@ -1,0 +1,31 @@
+@startuml Architecture
+actor User
+
+package "JS Frontend SPA" as frontend {
+[Vue.js] as vue
+[Quasar Framework] as quasar
+}
+
+
+cloud "SAP Neo PaaS" as neo {
+database "HANA Database" as hana
+package "Java Backend" as backend {
+    [Eclipse Jersey] as jersey
+} 
+[Apache Tomcat] as tomcat
+}
+
+actor "Jenkins CI/CD" as jenkins
+
+User --> frontend
+vue --> quasar
+vue --> backend
+
+jenkins --> neo
+jenkins --> backend
+backend --> hana
+
+backend --> tomcat
+
+
+@enduml
