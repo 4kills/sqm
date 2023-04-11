@@ -50,3 +50,36 @@ startet Jenkins den CI/CD-Prozess und testet und deployed das neue Backend/Front
 Änderungen im Frontend werden zudem direkt auf dem Produktivsystem deployed. 
 Für Änderungen des Backends im Produktivsystem kann in SAP Neo ein neuer Release erzeugt werden, 
 bei dem das Java-Backend der Entwicklungsinstanz auf das Produktivsystem kopiert wird. 
+
+
+\section{Ist-Situation und warum die problematisch ist}
+
+Entwickler-Team aufgeteilt auf Deutschland und Australien. 
+
+Keine fest vorgegebenen Release-Zyklen. Releases, wenn neues Feature fertig.
+
+Releases oft Freitags durch australisches Team. 
+
+Keinerlei automatisierte Tests. 
+
+Viele Bugs in Production. Oft hot-fixes nötig.
+
+Der CI/CD prozess für deployment auf der entwicklungs-instanz dauert 15 minuten. 
+
+Das Backend kann nicht auf dem lokalen Rechner gestartet werden, 
+da die Hana-Datenbank nicht lokal gehostet werden kann und kein Mock existiert.  
+
+Codequalität in schrecklichem Zustand. Viele duplikative Code-Stücke, 
+wenig Struktur, keine Aufteilung der Architektur in Schichten. 
+Immer gegen Implementationen programmiert, anstatt gegen Abstraktionen.
+
+Unleserlichkeit des Codes. 40-50 Zeilen lange, verschachtelte SQL-Statements, 
+die viel Code-Duplikate enthalten.
+
+Keine Code-Reviews 
+
+Kanban-Board mit Tasks und Prioritäten 
+aber kein Sprint-Planning und kein Sprint-Review. 
+
+SCRUM-Meetings zweimal pro Woche aber mit ganzer Abteilung (nicht nur Entwickler, 
+sondern auch Designer, Manager, Content-Moderators etc). Dadurch sehr ineffizient. 
