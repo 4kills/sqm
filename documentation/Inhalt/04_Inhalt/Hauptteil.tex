@@ -54,32 +54,63 @@ bei dem das Java-Backend der Entwicklungsinstanz auf das Produktivsystem kopiert
 
 \section{Ist-Situation und warum die problematisch ist}
 
-Entwickler-Team aufgeteilt auf Deutschland und Australien. 
+Das Entwickler-Team ist auf Deutschland und Australien aufgeteilt, 
+was zu Kommunikationsschwierigkeiten und unterschiedlichen Arbeitszeiten führen kann. 
+Dies erschwert die Zusammenarbeit und kann die Qualität der Software und die Effizienz 
+der Entwicklungsprozesse beeinträchtigen.
 
-Keine fest vorgegebenen Release-Zyklen. Releases, wenn neues Feature fertig.
+Es gibt keine fest vorgegebenen Release-Zyklen; Releases finden nur statt, 
+wenn ein neues Feature fertig ist. Dies kann zu unvorhersehbaren und unregelmäßigen Updates führen,
+wodurch die Planung und das Management des Projekts schwieriger werden.
 
-Releases oft Freitags durch australisches Team. 
+Releases werden oft freitags durch das australische Team durchgeführt. 
+Dies kann problematisch sein, weil das Team in Deutschland möglicherweise nicht verfügbar ist, 
+um eventuell auftretende Probleme sofort zu beheben, was zu längeren Ausfallzeiten führen kann.
 
-Keinerlei automatisierte Tests. 
+Es gibt keinerlei automatisierte Tests. Dies bedeutet, 
+dass die Qualität der Software nicht kontinuierlich überprüft wird, 
+wodurch Fehler erst spät oder gar nicht entdeckt werden. Dies erhöht das Risiko, 
+dass Fehler in die Produktion gelangen, was zu einer schlechteren Benutzererfahrung führt.
 
-Viele Bugs in Production. Oft hot-fixes nötig.
+Viele Bugs gelangen in die Produktionsumgebung, wodurch oft Hot-Fixes notwendig sind. Dies zeigt, 
+dass der Entwicklungsprozess und die Qualitätssicherung unzureichend sind und die Softwarequalität leidet.
 
-Der CI/CD prozess für deployment auf der entwicklungs-instanz dauert 15 minuten. 
+Der CI/CD-Prozess für das Deployment auf der Entwicklungsinstanz dauert 15 Minuten. 
+Das ist eine lange Wartezeit, die den Entwicklungsprozess verlangsamt und zu einer geringeren Produktivität führt.
 
 Das Backend kann nicht auf dem lokalen Rechner gestartet werden, 
-da die Hana-Datenbank nicht lokal gehostet werden kann und kein Mock existiert.  
+da die HANA-Datenbank nicht lokal gehostet werden kann und kein Mock existiert. 
+Dies erschwert die lokale Entwicklung und das Testen, 
+was die Effizienz der Entwickler beeinträchtigt und die Qualität der Software gefährdet.
 
-Codequalität in schrecklichem Zustand. Viele duplikative Code-Stücke, 
-wenig Struktur, keine Aufteilung der Architektur in Schichten. 
-Immer gegen Implementationen programmiert, anstatt gegen Abstraktionen.
+Die Codequalität ist in einem schrecklichen Zustand: Viele duplikative Code-Stücke, 
+wenig Struktur und keine Aufteilung der Architektur in Schichten. 
+Es wird immer gegen Implementierungen programmiert, anstatt gegen Abstraktionen. 
+Dies führt zu einer schlechteren Wartbarkeit, 
+erhöht die Fehleranfälligkeit und erschwert die Einarbeitung neuer Teammitglieder.
 
-Unleserlichkeit des Codes. 40-50 Zeilen lange, verschachtelte SQL-Statements, 
-die viel Code-Duplikate enthalten.
+Der Code ist oft unleserlich, zum Beispiel durch 40-50 Zeilen lange, 
+verschachtelte SQL-Statements, die viel Code-Duplikate enthalten. 
+Dies führt zu einer schlechteren Wartbarkeit und macht es schwieriger, 
+Fehler zu erkennen und zu beheben.
 
-Keine Code-Reviews 
+Es gibt keine Code-Reviews, was bedeutet, dass keine systematische Überprüfung der Codequalität 
+stattfindet. Dies erhöht die Wahrscheinlichkeit von Fehlern und mindert die Qualität der Software.
 
-Kanban-Board mit Tasks und Prioritäten 
-aber kein Sprint-Planning und kein Sprint-Review. 
+Obwohl ein Kanban-Board mit Tasks und Prioritäten verwendet wird, 
+gibt es kein Sprint-Planning und kein Sprint-Review. 
+Dies führt zu einer schlechteren Planung und Kontrolle der Arbeit 
+und beeinträchtigt die Effizienz des Entwicklungsprozesses.
 
-SCRUM-Meetings zweimal pro Woche aber mit ganzer Abteilung (nicht nur Entwickler, 
-sondern auch Designer, Manager, Content-Moderators etc). Dadurch sehr ineffizient. 
+Die Scrum-Meetings finden zweimal pro Woche statt, 
+aber mit der ganzen Abteilung (nicht nur Entwickler, sondern auch Designer, Manager, Content-Moderatoren usw.). 
+Dadurch werden diese Meetings sehr ineffizient, 
+da nicht alle Teilnehmer direkt am Entwicklungsprozess beteiligt sind. 
+Dies führt zu einer schlechteren Kommunikation und Koordination innerhalb des Entwicklerteams 
+und beeinträchtigt die Effizienz des Entwicklungsprozesses.
+
+Insgesamt sind die identifizierten Probleme im Bereich der Software-Qualitäts-Management 
+und Entwicklungsprozesse ein erhebliches Hindernis für die Erreichung einer 
+hohen Softwarequalität und einer effizienten Arbeitsweise. Um die Situation zu verbessern, 
+müssen die genannten Probleme adressiert und Lösungen gefunden werden, 
+die zu einer besseren Organisation, Kommunikation und Qualitätssicherung führen.
