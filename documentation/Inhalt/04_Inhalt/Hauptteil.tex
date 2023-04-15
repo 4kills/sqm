@@ -260,7 +260,116 @@ leicht abgewandelte Implementation von PDCA dar.
 
 \section{Optimierungen}
 
+Im Folgenden werden konkrete und einschlägige Maßnahmen vorgeschlagen, um unter Berücksichtigung 
+der erörterten vielfältigen Gründe die identifizierten Probleme aus den vorangegangenen Abschnitten 
+zu beheben. Dabei sind Schlüsselmaßnahmen SCRUM ordentlich zu implementieren 
+und das magische Dreieck zu berücksichtigen. Wie das genau Anwendung findet, ist im Weiteren 
+detaillierter dargestellt. Für SCRUM soll jedoch ein zweiwöchentlicher Sprint mit zwei SCRUM-\enquote{Dailys} 
+pro Woche dienstags und donnerstags durchgeführt werden. Zwei Wochen, um relativ kurze Zyklen zu haben, 
+bei denen die in Teilzeit angestellten Studenten jedoch auch etwas erreichen können. 
+Zwei SCRUM-Meetings pro Woche, um den Load an Meetings für die Studenten nicht zu stark zu erhöhen. 
+Es kommen schließlich bereits Sprint-Planning, -Review und -Retrospective dazu. 
 
+\subsubsection*{Kommunikation und Zusammenarbeit im verteilten Team verbessern:}
 
-zuerst magisches dreieck und soll helfen gegen priorisierung von aufgaben und kosten usw
-für weniger stress bei studenten. Studenten sind schon günstig. erklärung auf beispiel beziehen.
+\begin{itemize}
+\item Regelmäßige, klar strukturierte Videokonferenzen zwischen den beiden Teams. 
+Das wird mithilfe von SCRUM-Dailys (bzw. SCRUM-\enquote{bi-weekly}) umgesetzt.
+\item Einsatz von Kanban-Board verbessern, in dem Aufgaben klarer einer Person zugeteilt werden, 
+im Rahmen des neu eingeführten Sprint-Plannings. Das steckt auch den Umfang für jede Person im Rahmen des magischen Dreiecks ab.
+\item Verantwortlichkeiten besser verteilen, in dem ein deutscher und australischer Team-Lead ernannt wird.
+\end{itemize}
+
+\subsubsection*{Fest vorgegebene Release-Zyklen einführen:}
+
+\begin{itemize}
+	\item Einführung von regelmäßigen Release-Zyklen im Rahmen der zweiwöchigen Sprints, 
+	um Planung und Projektmanagement zu erleichtern und vorhersehbarere Releases für die Nutzer zu generieren.
+	\item Zeit für ausreichendes Testen und Qualitätssicherung in den SCRUM-Sprint einplanen.
+	Das Mehr an Zeit sorgt im magischen Dreieck für weniger Kosten, die durch Bugs später verursacht werden. 
+\end{itemize}
+
+\subsubsection*{Releases außerhalb der kritischen Zeitfenster planen:}
+
+\begin{itemize}
+	\item Releases während der gemeinsamen Arbeitszeit beider Teams planen, um schnelle Reaktionen auf Probleme zu ermöglichen.
+	\item Insbesondere: Releases sollten nicht freitags stattfinden.
+	\item Klare Zuständigkeiten für die Behebung von Problemen nach einem Release festlegen. 
+	Der Autor eines Features oder Code-Stücks (festgelegt über SCRUM-Planning) ist für dessen Funktionieren und ggf. fixen verantwortlich. 
+\end{itemize}
+
+\subsubsection*{Automatisierte Tests implementieren:}
+
+\begin{itemize}
+	\item Test-Driven Development (TDD) einführen, um Qualitätssicherung von Anfang an in den Entwicklungsprozess zu integrieren.
+	Dies erhöht initial die Kosten und den Umfang des Projektes im magischen Dreieck aber senkte später Kosten wegen weniger Bugs.
+	\item Unit-Tests, Integrationstests und End-to-End-Tests erstellen, um die gesamte Funktionalität der Software abzudecken.
+	Auch hier ist wieder ein Zeitaufwand nötig, der langfristig allerdings die Kosten (und den Zeitaufwand) senkt,
+	da weniger Zeit mit dem Fixen komplizierter Bugs vergeudet wird. 
+\end{itemize}
+
+\subsubsection*{CI/CD-Prozess optimieren und lokale Entwicklungsumgebung verbessern:}
+
+\begin{itemize}
+	\item Beschleunigung des CI/CD-Prozesses mithilfe von Jenkins durch effizientere Build- und Deployment-Strategien untersuchen.
+	\item Erstellung einer lokalen Entwicklungsumgebung durch Abstraktion von Abhängigkeiten mit Interfaces und Mocks 
+	oder leichtgewichtigen Alternativen zur HANA-Datenbank. 
+	Auch hierfür ist im Rahmen des magischen Dreiecks ein Zeitaufwand notwendig, 
+	der später allerdings zu produktiverer Arbeit führt, da Entwickler nicht lange auf das Durchlaufen der CI/CD-Pipeline warten müssen. 
+\end{itemize}
+
+\subsubsection*{Codequalität verbessern:}
+
+\begin{itemize}
+	\item Einführung von Code-Richtlinien und Best Practices für saubere Architektur, Abstraktion und Modularität.
+	\item Jedes zu veröffentlichende Code-Stück, zumindest im Backend, 
+	muss Code-Reviews von mindestens einem anderen Entwickler als dem Autor selbst durchlaufen.
+	Feedback zur Verbesserung der Codequalität muss vor dem produktiven Deployen des Codes eingearbeitet werden. 
+	\item Refactoring von vorhandenem Code durchführen, um Duplikate, schlechte Struktur, fehleranfällige 
+	und unleserliche Passagen zu bereinigen.
+\end{itemize}
+
+\subsubsection*{SCRUM einsetzen und effizientere Meetings durchführen:}
+
+\begin{itemize}
+	\item Einführung von Sprint-Planning, Sprint-Review- und Sprint-Retrospective-Meetings, 
+	um Arbeitsaufwand besser zu planen, zu bewerten und den SCRUM-Prozess zu verbessern. Hierbei kommt das 
+	Prinzip von PDCA zum Einsatz. Hiermit kann auch die Lage des Projektes im magischen Dreieck besser eingeschätzt werden.
+	\item Scrum-Meetings auf die direkt am Entwicklungsprozess beteiligten Personen beschränken, um Effizienz zu steigern.
+	Dafür in den Sprint-Reviews die weiteren Stakeholder inkludieren und in Feedbackprozesse einbinden.  
+\end{itemize}
+
+\subsubsection*{Ressourcen- und Prioritätenmanagement verbessern:}
+
+\begin{itemize}
+	\item Schaffung einer Kultur, in der \enquote{nein} sagen erlaubt ist, \underline{unterstützt} und encouraged wird 
+	und Prioritäten angemessen gesetzt werden können.
+	\item Fokus auf Testentwicklung und Qualitätssicherung, anstatt nur auf Feature-Entwicklung.
+	Hierfür zu Beginn ein festes Zeitkontingent einführen.
+	\item Den Wissenstransfer zwischen gehenden und kommenden Studenten verbessern, aufgrund der hohen Studentenfluktation.
+	Hierfür sollte ein Prozess mit einem expliziten Meeting angesetzt werden, in dem ein kommender Student 
+	vom restlichen Team alle Dos and Don'ts, sowie die Erfahrungen der vorhandenen Studenten erzählt bekommt. 
+	Insbesondere sollte darauf hingewiesen werden, welche Herausforderungen zuvor bewältigt werden mussten. 
+	Ein gehender Student sollte seine einschlägigsten fünf Erfahrungen mit Bezug zu Softwarequalität für 
+	die Nachwelt dokumentieren.  
+	\item Auf lange Sicht und wenn das Projekt wächst Bemühungen zur Bereitstellung von Ressourcen 
+	für die Anstellung von mindestens einem Senior-Entwickler, der langfristig das Team unterstützen und leiten kann, unternehmen. 
+	Natürlich ist es hier einfach zu sagen \enquote{einfach mehr Entwickler anstellen}, 
+	aber es sollte wirklich im Interesse der Projekt- und Abteilungsleitung sein Ausschau nach zumindest einem 
+	Vollzeitentwickler zu halten, wenn die Ressourcen verfügbar werden sollten, anstatt z.B. einen weiteren 
+	Vollzeitdesigner anzustellen (wofür z.B. Ressourcen vorhanden sind).  
+\end{itemize}
+
+\subsubsection*{Umgang mit Zeitdruck und Erwartungen der Nutzer:}
+
+\begin{itemize}
+	\item Klare Kommunikation gegenüber den Nutzern über realistische Erwartungen bezüglich der Bereitstellung neuer Funktionen.
+	Hierfür kann den Benutzern zum besseren Verständnis das magische Dreieck nahegelegt werden: 
+	Die Nutzer beteiligen sich nicht an den Kosten des Projektes, dementsprechend kann kein allzu großer Umfang neuer 
+	Features in wenig Zeit erwartet werden, da sonst die Kosten drastisch ansteigen würden. 
+	\item Zeit für Qualitätsmanagement, Testentwicklung und -durchführung in den Entwicklungszyklus einplanen, um den Zeitdruck zu reduzieren.
+	Das sollte insbesondere im Sprint-Planning berücksichtigt werden. Für ein Feature sollte also immer auch die Zeit zum Testen 
+	und zur Sicherstellung der Code-Qualität mit einberechnet werden. 
+\end{itemize}
+
+\chapter{Zusammenfassung}
